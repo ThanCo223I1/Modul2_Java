@@ -1,3 +1,5 @@
+import java.lang.reflect.Array;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class DaoNguocPTMang {
@@ -21,17 +23,13 @@ public class DaoNguocPTMang {
             i++;
         }
         System.out.println("Các phần tử trong mảng: ");
-        for (int j = 0; j < array.length; j++) {
-            System.out.println(array[j] + "\t");
-        }
+        System.out.println(Arrays.toString(array));
         for (int j = 0; j < array.length/2; j++) {
             int temp = array[j];
             array[j] = array[size - 1 - j];
             array[size - 1 - j] = temp;
         }
         System.out.println("Mang sau khi dao nguoc: ");
-        for (int j = 0; j < array.length; j++) {
-            System.out.print(array[j] + "\t");
-        }
+        System.out.println(Arrays.toString(array));
     }
 }
