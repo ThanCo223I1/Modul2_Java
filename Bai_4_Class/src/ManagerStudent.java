@@ -1,3 +1,4 @@
+import javax.xml.namespace.QName;
 import java.util.Scanner;
 
 public class ManagerStudent {
@@ -5,8 +6,8 @@ public class ManagerStudent {
     Scanner scanner = new Scanner(System.in);
 
     ManagerStudent() {
-        students[0] = new Student(1, "Tùng", 20);
-        students[1] = new Student(2, "Vương", 21);
+        students[0] = new Student(1, "Nam", 20);
+        students[1] = new Student(2, "Nhan", 21);
     }
 
     public void show() {
@@ -33,5 +34,7 @@ public class ManagerStudent {
         students = newStudents;
     }
 
+    public void delete() {
+    }
 
 }
