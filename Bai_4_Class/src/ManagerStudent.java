@@ -34,7 +34,57 @@ public class ManagerStudent {
         students = newStudents;
     }
 
-    public void delete() {
+    public void Edit() {
+        System.out.println("Nhap id can sua: ");
+        int id1= Integer.parseInt(scanner.nextLine());
+        boolean check = false;
+        for (int i = 0; i < students.length ; i++) {
+            if (id1 == students[i].getId()){
+                check = true;
+                break;
+            }
+        }
+        if (!check){
+            System.out.println("ID khong dung");
+        }else {
+            for (int i = 0; i < students.length; i++) {
+                if (id1 == students[i].getId()){
+                    System.out.println("Nhap ten can sua: ");
+                    String name = scanner.nextLine();
+                    students[i].setName(name);
+                    System.out.println("Nhap tuoi can sua: ");
+                    int age = Integer.parseInt(scanner.nextLine());
+                    students[i].setAge(age);
+                }
+            }
+        }
     }
-
+    public  void Xoa(){
+        System.out.println("Nhap id can xoa: ");
+        int id2 = Integer.parseInt(scanner.nextLine());
+        Student[] students1 = new Student[students.length - 1];
+        boolean check = false;
+        for (int i = 0; i < students.length; i++) {
+            if (students[i].getId() == id2){
+                check = true;
+                break;
+            }
+        }
+        if (!check)
+        for (int i = 0; i < students.length; i++) {
+            if (students[i].getId() == id2){
+                for (int j = 0; j < students1.length; j++) {
+                    if (j < i){
+                        students1[j] = students[j];
+                    }else {
+                        students1[j] =students[j + 1];
+                    }
+                }
+                students = students1;
+            }else {
+                System.out.println("Khong thay id can xoa:");
+                break;
+            }
+        }
+    }
 }

@@ -23,9 +23,11 @@ public class Main {
                     break;
                 case 3:
                     // sửa: nhập id muốn sửa
+                    managerStudent.Edit();
                     break;
                 case 4:
                     // xóa theo id;
+                    managerStudent.Xoa();
                     break;
                 case 5:
                     System.exit(0);
