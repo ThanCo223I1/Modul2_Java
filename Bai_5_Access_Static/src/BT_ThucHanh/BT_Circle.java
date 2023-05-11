@@ -1,3 +1,5 @@
+package BT_ThucHanh;
+
 class BT_Circle {
     private double radius = 3.0;
     private String color = "red";
