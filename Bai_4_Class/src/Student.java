@@ -13,7 +13,7 @@ public class Student {
         return id;
     }
 
-    public void setId(int id) {
+    public void setIdd(int id) {
         this.id = id;
     }
 

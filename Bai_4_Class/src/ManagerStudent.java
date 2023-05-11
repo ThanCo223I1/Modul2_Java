@@ -1,4 +1,3 @@
-import javax.xml.namespace.QName;
 import java.util.Scanner;
 
 public class ManagerStudent {
@@ -6,17 +5,18 @@ public class ManagerStudent {
     Scanner scanner = new Scanner(System.in);
 
     ManagerStudent() {
-        students[0] = new Student(1, "Nam", 20);
-        students[1] = new Student(2, "Nhan", 21);
+        students[0] = new Student(1, "Tuan", 20);
+        students[1] = new Student(2, "Hung", 21);
     }
 
     public void show() {
         for (Student s : students) {
-            System.out.println(s.getId() + " - " + s.getName() + " - " + s.getAge());
+            System.out.println("---------------------------------------------------");
+            System.out.println("        " + s.getId() + " - " + s.getName() + " - " + s.getAge());
         }
     }
 
-    public void add(){
+    public Student createStudent() {
         System.out.println("Nhập id");
         int id = Integer.parseInt(scanner.nextLine());
         System.out.println("Nhập name");
@@ -24,67 +24,90 @@ public class ManagerStudent {
         System.out.println("Nhập Age");
         int age = Integer.parseInt(scanner.nextLine());
 
-        Student student = new Student(id,name,age);
+        Student student = new Student(id, name, age);
+        return student;
+    }
 
+    public void add() {
+        Student student = createStudent();
         Student[] newStudents = new Student[students.length + 1];
-        newStudents[newStudents.length -1] = student;
+        newStudents[newStudents.length - 1] = student;
         for (int i = 0; i < students.length; i++) {
             newStudents[i] = students[i];
         }
         students = newStudents;
     }
 
-    public void Edit() {
-        System.out.println("Nhap id can sua: ");
-        int id1= Integer.parseInt(scanner.nextLine());
-        boolean check = false;
-        for (int i = 0; i < students.length ; i++) {
-            if (id1 == students[i].getId()){
-                check = true;
-                break;
+    public void edit() {
+        System.out.println("Nhập id muốn sửa");
+        int id = Integer.parseInt(scanner.nextLine());
+
+        for (Student s : students) {
+            if (s.getId() == id) {
+                System.out.println("Nhập name");
+                String name = scanner.nextLine();
+                System.out.println("Nhập Age");
+                int age = Integer.parseInt(scanner.nextLine());
+
+                s.setName(name);
+                s.setAge(age);
+                return;
             }
         }
-        if (!check){
-            System.out.println("ID khong dung");
-        }else {
-            for (int i = 0; i < students.length; i++) {
-                if (id1 == students[i].getId()){
-                    System.out.println("Nhap ten can sua: ");
-                    String name = scanner.nextLine();
-                    students[i].setName(name);
-                    System.out.println("Nhap tuoi can sua: ");
-                    int age = Integer.parseInt(scanner.nextLine());
-                    students[i].setAge(age);
+        System.err.println("        Không tìm thấy id cần sửa");
+    }
+
+    public void delete() {
+        System.out.println("Nhập id muốn xóa");
+        int id = Integer.parseInt(scanner.nextLine());
+        int index = findIndexById(id);
+
+        if (index != -1) {
+            Student[] newStudents = new Student[students.length - 1];
+            for (int i = 0; i < newStudents.length; i++) {
+                if (i < index) {
+                    newStudents[i] = students[i];
+                } else {
+                    newStudents[i] = students[i + 1];
                 }
+            }
+            students = newStudents;
+        } else {
+            System.err.println("        Không tìm thấy id cần xóa");
+        }
+    }
+
+    public int findIndexById(int id) {
+        for (int i = 0; i < students.length; i++) {
+            if (students[i].getId() == id) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    public void Search() {
+        System.out.println("Nhập Tên Cần Tìm: ");
+        String Name = scanner.nextLine();
+        for (Student student : students) {
+            if (Name.equals(student.getName())) {
+                System.out.println("        " + student.getId() + " - " + student.getName() + " - " + student.getAge());
             }
         }
     }
-    public  void Xoa(){
-        System.out.println("Nhap id can xoa: ");
-        int id2 = Integer.parseInt(scanner.nextLine());
-        Student[] students1 = new Student[students.length - 1];
-        boolean check = false;
-        for (int i = 0; i < students.length; i++) {
-            if (students[i].getId() == id2){
-                check = true;
-                break;
-            }
-        }
-        if (!check)
-        for (int i = 0; i < students.length; i++) {
-            if (students[i].getId() == id2){
-                for (int j = 0; j < students1.length; j++) {
-                    if (j < i){
-                        students1[j] = students[j];
-                    }else {
-                        students1[j] =students[j + 1];
-                    }
+    public void SapXep(){
+        System.out.println("Sắp xếp theo thứ tự: ");
+        Student temp;
+        for (int i = 0; i < students.length -1; i++) {
+            for (int j = i+1; j < students.length ; j++) {
+                if (students[i].getAge() > students[j].getAge() ){
+                     temp = students[i];
+                    students[i] = students[j];
+                    students[j] = temp;
                 }
-                students = students1;
-            }else {
-                System.out.println("Khong thay id can xoa:");
-                break;
             }
         }
+        System.out.println("Danh sách sau khi sắp xếp: " );
+        show();
     }
 }

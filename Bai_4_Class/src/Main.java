@@ -5,12 +5,15 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         ManagerStudent managerStudent = new ManagerStudent();
         while (true) {
+            System.out.println("---------------------------------------------------");
             System.out.println("Quản Lý Sinh Viên");
             System.out.println("1. Hiển Thị");
             System.out.println("2. Thêm Sinh Viên");
             System.out.println("3. Sửa Sinh Viên");
             System.out.println("4. Xóa Sinh Viên");
-            System.out.println("5. Thoát");
+            System.out.println("5. Tìm Kiếm Theo Tên");
+            System.out.println("6. Sắp Xếp Theo Tuổi");
+            System.out.println("7. Thoát");
             int choice = Integer.parseInt(scanner.nextLine());
             switch (choice) {
                 case 1:
@@ -23,13 +26,19 @@ public class Main {
                     break;
                 case 3:
                     // sửa: nhập id muốn sửa
-                    managerStudent.Edit();
+                    managerStudent.edit();
                     break;
                 case 4:
                     // xóa theo id;
-                    managerStudent.Xoa();
+                    managerStudent.delete();
                     break;
                 case 5:
+                    managerStudent.Search();
+                    break;
+                case 6:
+                    managerStudent.SapXep();
+                    break;
+                case 7:
                     System.exit(0);
             }
         }
