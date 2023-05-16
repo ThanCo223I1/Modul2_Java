@@ -2,10 +2,12 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Bai2_VongLap/BT_Slack/BT_Slack.iml" filepath="$PROJECT_DIR$/Bai2_VongLap/BT_Slack/BT_Slack.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Bai1_IntroductionToJava/Bai1_IntroductionToJava.iml" filepath="$PROJECT_DIR$/Bai1_IntroductionToJava/Bai1_IntroductionToJava.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Bai2_VongLap/Bai2_VongLap.iml" filepath="$PROJECT_DIR$/Bai2_VongLap/Bai2_VongLap.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Bai3_Mang/Bai3_Mang.iml" filepath="$PROJECT_DIR$/Bai3_Mang/Bai3_Mang.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Bai_2_VongLap/BT_Slack/BT_Slack.iml" filepath="$PROJECT_DIR$/Bai_2_VongLap/BT_Slack/BT_Slack.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Bai_1_IntroductionToJava/Bai1_IntroductionToJava.iml" filepath="$PROJECT_DIR$/Bai_1_IntroductionToJava/Bai1_IntroductionToJava.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Bai_2_VongLap/Bai2_VongLap.iml" filepath="$PROJECT_DIR$/Bai_2_VongLap/Bai2_VongLap.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Bai_3_Mang/Bai3_Mang.iml" filepath="$PROJECT_DIR$/Bai_3_Mang/Bai3_Mang.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Bai_7_Abstract_Class_Interface/Bai7_Abstract_Class_Interface.iml" filepath="$PROJECT_DIR$/Bai_7_Abstract_Class_Interface/Bai7_Abstract_Class_Interface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Bai_8_CleanCode/Bai8_CleanCode.iml" filepath="$PROJECT_DIR$/Bai_8_CleanCode/Bai8_CleanCode.iml" />
       <module fileurl="file://$PROJECT_DIR$/Bai_4_Class/Bai_4_Class.iml" filepath="$PROJECT_DIR$/Bai_4_Class/Bai_4_Class.iml" />
       <module fileurl="file://$PROJECT_DIR$/Bai_5_Access_Static/Bai_5_Access_Static.iml" filepath="$PROJECT_DIR$/Bai_5_Access_Static/Bai_5_Access_Static.iml" />
       <module fileurl="file://$PROJECT_DIR$/Bai_6_KeThua_DaHinh/Bai_6_KeThua_DaHinh.iml" filepath="$PROJECT_DIR$/Bai_6_KeThua_DaHinh/Bai_6_KeThua_DaHinh.iml" />
