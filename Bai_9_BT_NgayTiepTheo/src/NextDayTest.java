@@ -26,11 +26,30 @@ public class NextDayTest {
     }
     @Test
     void ngayTiepTheo3(){
-        int day = 2;
+        int day = 28;
         int month = 2;
         int year = 2021;
         String kqTT = nextDay.ngayTiepTheo(day, month, year);
-        String kqMM = "3/2/2021";
+        String kqMM = "1/3/2021";
+        assertEquals(kqMM,kqTT);
+    }
+
+    @Test
+    void ngayTiepTheo4(){
+        int day = 29;
+        int month = 13;
+        int year = -2021;
+        String kqTT = nextDay.ngayTiepTheo(day, month, year);
+        String kqMM = "Ban Nhap Sai";
+        assertEquals(kqMM,kqTT);
+    }
+    @Test
+    void ngayTiepTheo5(){
+        int day = 29;
+        int month = 13;
+        int year = 2021;
+        String kqTT = nextDay.ngayTiepTheo(day, month, year);
+        String kqMM = "Ban Nhap Sai";
         assertEquals(kqMM,kqTT);
     }
 }
