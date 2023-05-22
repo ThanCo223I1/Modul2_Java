@@ -10,9 +10,10 @@ public class MyList<E> {
     private Object elements[];
 
     public MyList() {
+        elements = new Object[defaulta_Capacity];
     }
 
-    public MyList(int capacity) {
+    public MyList(int element) {
         elements = new Object[defaulta_Capacity];
     }
 
@@ -22,7 +23,7 @@ public class MyList<E> {
     }
 
     public void add(int index, E element) {
-        if (size == elements.length) {
+        if (elements.length == size) {
             nhanDoiMang();
         }
         if (index < 0 && index > size) {
@@ -43,7 +44,7 @@ public class MyList<E> {
             E element = (E) elements[index];
             for (int i = index; i < size - 1; i++) {
                 elements[i] = elements[i + 1];
-//                elements[size - 1] = null; khong co cung duoc
+                elements[size - 1] = null; //khong co cung duoc
             }
             size--;
             return element;
