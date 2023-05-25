@@ -3,11 +3,13 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Bai_2_VongLap/BT_Slack/BT_Slack.iml" filepath="$PROJECT_DIR$/Bai_2_VongLap/BT_Slack/BT_Slack.iml" />
+      <module fileurl="file://$PROJECT_DIR$/BT_Slack_QuanLiSanPham/BT_Slack_QuanLiSanPham.iml" filepath="$PROJECT_DIR$/BT_Slack_QuanLiSanPham/BT_Slack_QuanLiSanPham.iml" />
       <module fileurl="file://$PROJECT_DIR$/Bai_1_IntroductionToJava/Bai1_IntroductionToJava.iml" filepath="$PROJECT_DIR$/Bai_1_IntroductionToJava/Bai1_IntroductionToJava.iml" />
       <module fileurl="file://$PROJECT_DIR$/Bai_2_VongLap/Bai2_VongLap.iml" filepath="$PROJECT_DIR$/Bai_2_VongLap/Bai2_VongLap.iml" />
       <module fileurl="file://$PROJECT_DIR$/Bai_3_Mang/Bai3_Mang.iml" filepath="$PROJECT_DIR$/Bai_3_Mang/Bai3_Mang.iml" />
       <module fileurl="file://$PROJECT_DIR$/Bai_7_Abstract_Class_Interface/Bai7_Abstract_Class_Interface.iml" filepath="$PROJECT_DIR$/Bai_7_Abstract_Class_Interface/Bai7_Abstract_Class_Interface.iml" />
       <module fileurl="file://$PROJECT_DIR$/Bai_8_CleanCode/Bai8_CleanCode.iml" filepath="$PROJECT_DIR$/Bai_8_CleanCode/Bai8_CleanCode.iml" />
+      <module fileurl="file://$PROJECT_DIR$/BaiMau/BaiMau.iml" filepath="$PROJECT_DIR$/BaiMau/BaiMau.iml" />
       <module fileurl="file://$PROJECT_DIR$/Bai_10_ArrayList/Bai_10_ArrayList.iml" filepath="$PROJECT_DIR$/Bai_10_ArrayList/Bai_10_ArrayList.iml" />
       <module fileurl="file://$PROJECT_DIR$/Bai_11_Stack_Queue/Bai_11_Stack_Queue.iml" filepath="$PROJECT_DIR$/Bai_11_Stack_Queue/Bai_11_Stack_Queue.iml" />
       <module fileurl="file://$PROJECT_DIR$/Bai_14_ThuatToanSapXep/Bai_14_ThuatToanSapXep.iml" filepath="$PROJECT_DIR$/Bai_14_ThuatToanSapXep/Bai_14_ThuatToanSapXep.iml" />
