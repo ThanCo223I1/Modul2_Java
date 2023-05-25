@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class Vaccine {
     private int id;
-    public int count;
+    public static int count;
     private String nameVaccine;
     private Date dateVaccine;
     private double price;
@@ -72,13 +72,12 @@ public class Vaccine {
 
     @Override
     public String toString() {
-        return "Vaccine{" +
+        return "\nVaccine{" +
                 "id=" + id +
-                ", count=" + count +
                 ", nameVaccine='" + nameVaccine + '\'' +
                 ", dateVaccine=" + dateVaccine +
                 ", price=" + price +
                 ", injectVaccine=" + injectVaccine +
-                '}';
+                "}";
     }
 }
