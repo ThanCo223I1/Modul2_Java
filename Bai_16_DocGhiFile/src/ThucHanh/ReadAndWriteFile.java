@@ -22,7 +22,7 @@ public class ReadAndWriteFile {
             for (Integer a: numbers) {
                 printWriter.println(a);
             }
-            printWriter.println("Max: " + timMax(nums));
+            printWriter.println("Max is: " + timMax(nums));
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -41,7 +41,7 @@ public class ReadAndWriteFile {
     }
     public static void main(String[] args) {
        numbers.add(1);
-       numbers.add(2);
+       numbers.add(22);
        numbers.add(5);
        numbers.add(7);
        writeFile(numbers);
