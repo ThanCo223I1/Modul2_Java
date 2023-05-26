@@ -5,49 +5,47 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ReadAndWriteFile {
-    public List<Integer> readFile(String filePath){
-        List<Integer> numbers = new ArrayList<>();
-        try {
-            File file = new File(filePath);
-            if (!file.exists()) {
-                throw new FileNotFoundException();
-            }
-            BufferedReader br = new BufferedReader(new FileReader(file));
-            String line = "";
-            while ((line = br.readLine()) != null) {
-                numbers.add(Integer.parseInt(line));
-            }
-            br.close();
-        } catch (Exception e) {
-            System.err.println("Fie không tồn tại or nội dung có lỗi!");
-        }
-        return numbers;
-    }
-    public void writeFile(String filePath, int max){
-        try {
-            FileWriter writer = new FileWriter(filePath, true);
-            BufferedWriter bufferedWriter = new BufferedWriter(writer);
-            bufferedWriter.write("Giá trị lớn nhất là: " + max);
-            bufferedWriter.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-}
-class FindMaxValue{
-    public static int findMax(List<Integer> numbers) {
-        int max = numbers.get(0);
-        for (int i = 0; i < numbers.size(); i++) {
-            if (max < numbers.get(i)) {
-                max = numbers.get(i);
+    static List<Integer> numbers = new ArrayList<>();
+    public static int timMax(List<Integer> nums) {
+        int max = nums.get(0);
+        for (int i = 0; i < nums.size(); i++) {
+            if (max < nums.get(i)) {
+                max = nums.get(i);
             }
         }
         return max;
     }
-    public static void main(String[] args) {
-        ReadAndWriteFile readAndWriteFile = new ReadAndWriteFile();
-        List<Integer> numbers = readAndWriteFile.readFile("numbers.txt");
-        int maxValue = findMax(numbers);
-        readAndWriteFile.writeFile("result.txt", maxValue);
+
+
+    public static void writeFile(List<Integer> nums ) {
+        try(PrintWriter printWriter = new PrintWriter("TimMax.txt");) {
+            for (Integer a: numbers) {
+                printWriter.println(a);
+            }
+            printWriter.println("Max: " + timMax(nums));
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
+
+    public static void readFile() {
+        try(FileReader fileReader = new FileReader("TimMax.txt");
+            BufferedReader bufferedReader = new BufferedReader(fileReader);) {
+            String str = "";
+            while ((str = bufferedReader.readLine()) != null){
+                System.out.println(str);
+            }
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+    public static void main(String[] args) {
+       numbers.add(1);
+       numbers.add(2);
+       numbers.add(5);
+       numbers.add(7);
+       writeFile(numbers);
+       readFile();
+    }
+
 }
