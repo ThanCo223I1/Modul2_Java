@@ -1,0 +1,18 @@
+Name: John
+Age: 30
+Salary: 2000.0
+ID: 30
+Working Days: 0
+
+Name: Alice
+Age: 35
+Salary: 2500.0
+ID: 20
+Working Days: 0
+
+Name: Mike
+Age: 28
+Salary: 1800.0
+ID: 30
+Working Days: 0
+

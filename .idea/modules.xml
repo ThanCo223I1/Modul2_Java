@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/BT-Slack-29.5/BT-Slack-29.5.iml" filepath="$PROJECT_DIR$/BT-Slack-29.5/BT-Slack-29.5.iml" />
       <module fileurl="file://$PROJECT_DIR$/Bai_2_VongLap/BT_Slack/BT_Slack.iml" filepath="$PROJECT_DIR$/Bai_2_VongLap/BT_Slack/BT_Slack.iml" />
       <module fileurl="file://$PROJECT_DIR$/BT_Slack_QuanLiSanPham/BT_Slack_QuanLiSanPham.iml" filepath="$PROJECT_DIR$/BT_Slack_QuanLiSanPham/BT_Slack_QuanLiSanPham.iml" />
       <module fileurl="file://$PROJECT_DIR$/Bai_1_IntroductionToJava/Bai1_IntroductionToJava.iml" filepath="$PROJECT_DIR$/Bai_1_IntroductionToJava/Bai1_IntroductionToJava.iml" />

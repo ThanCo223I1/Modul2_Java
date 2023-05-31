@@ -1,0 +1,33 @@
+
+Admin: 0, Than, 22, 200.0, 30, 2.
+Admin: 1, Thana, 11, 100.0, 30, 1.
+Admin: 0, Than, 22, 2.0, 2, 2.
+Admin: 0, than, 12, 2.0, 2, 2.
+
+Admin: 0, th, 2, 2.0, 2, 2.
+
+%-12s%s-12s%s-12s%sAdmin:0Thana, 22, 2.0, 2, 2.
+
+%-12s%s-12s%s-12s%sAdmin:0%-12s%s-12s%s-12s%sdd, 2, 2.0, 2, 2.
+Admin:0%-12s%s-12s%s-12s%sThsns, 2, 2.0, 2, 2.
+Admin:0%-12s%s-12s%s-12s%sthana, 22, 2.0, 2, 2.
+Admin:0%-12s%s-12s%s-12s%sThaa, 1, 1.0, 2, 2.
+Admin:0QuanLiNhanVien26_5.AdministrativeEmployee@6e0be85843.
+Admin:0QuanLiNhanVien26_5.AdministrativeEmployee@6e0be8584.
+Admin:0QuanLiNhanVien26_5.AdministrativeEmployee@6e0be8582.
+Admin:0QuanLiNhanVien26_5.AdministrativeEmployee@6e0be8582.
+Admin:0QuanLiNhanVien26_5.AdministrativeEmployee@6e0be8583.
+Admin:0QuanLiNhanVien26_5.AdministrativeEmployee@6e0be8583.
+Admin:0QuanLiNhanVien26_5.AdministrativeEmployee@6e0be8582.
+Admin:0QuanLiNhanVien26_5.AdministrativeEmployee@6e0be8582.
+Admin:0QuanLiNhanVien26_5.AdministrativeEmployee@6e0be8582.
+Admin:0QuanLiNhanVien26_5.AdministrativeEmployee@6e0be8582.
+Admin:0QuanLiNhanVien26_5.AdministrativeEmployee@6e0be8584.
+Admin:1QuanLiNhanVien26_5.AdministrativeEmployee@61bbe9ba2.
+Admin:0QuanLiNhanVien26_5.AdministrativeEmployee@6e0be8582.
+Technical: 0, QuanLiNhanVien26_5.TechnicalEmployee@61bbe9ba2.
+Sales: 0, QuanLiNhanVien26_5.SalesEmployee@610455d62.
+Admin:0QuanLiNhanVien26_5.AdministrativeEmployee@6e0be8583.
+Technical: 0, QuanLiNhanVien26_5.TechnicalEmployee@61bbe9ba2.
+Sales: 0, QuanLiNhanVien26_5.SalesEmployee@610455d63.
+Technical: 1, QuanLiNhanVien26_5.TechnicalEmployee@511d50c02.
