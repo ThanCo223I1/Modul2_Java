@@ -1,3 +1,7 @@
+package ThucHanh;
+
+import ThucHanh.EmailExample;
+
 public class TestEmailExample {
     private static EmailExample emailExample;
     private static final String[] validEmail = new String[]{"a@gmail.com", "ab@yahoo.com", "abc@hotmail.com"};
