@@ -5,7 +5,6 @@ import java.util.Scanner;
 
 public class ManagerEmployee {
     private List<Employee> employees = new ArrayList<>();
-    private List<Product> products = new ArrayList<>();
     Scanner sc = new Scanner(System.in);
     public static void writeDataToFile( List<Employee> employees) {
         try {
@@ -32,36 +31,9 @@ public class ManagerEmployee {
         return employees;
     }
 
-
-    public static void writeDataToFile1( List<Product> products) {
-        try {
-            FileOutputStream fos = new FileOutputStream("Hhxknv.txt");
-            ObjectOutputStream oos = new ObjectOutputStream(fos);
-            oos.writeObject(products);
-            oos.close();
-            fos.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-    public static List<Product> readDataFromFile1(){
-        List<Product> products1 = new ArrayList<>();
-        try{
-            FileInputStream fis = new FileInputStream("Hhxk.txt");
-            ObjectInputStream ois = new ObjectInputStream(fis);
-            products1 = (List<Product>) ois.readObject();
-            fis.close();
-            ois.close();
-        }catch(Exception ex){
-            ex.printStackTrace();
-        }
-        return products1;
-    }
-
     private void showAll() {
         showEmployeeFullTime();
         showEmployeePartTime();
-        showProduct();
     }
 
     private void showEmployeeFullTime() {
@@ -82,14 +54,6 @@ public class ManagerEmployee {
         }
     }
 
-    private void showProduct() {
-        System.out.printf("%-15s%-15s%-15s%-15s%-15s%-15s%-15s%-15s%s", "Product: ", "Number", "ID", "Name", "Age", "Phone", "Address", "Email", "WorkTime \n");
-        for (Product product : products) {
-            if (product instanceof Product) {
-                System.out.printf("%-15s%-15s%-15s%-15s%-15s%-15s%-15s%-15s%s", "", ((Product) product).getNumber(), product.getId(), product.getNameProduct(), product.getTrademark(), product.getMaterial(), product.getPrice(), product.getSize(), ((Product) product).getQuantity() + "\n");
-            }
-        }
-    }
 
     //1. Hiển Thị Nhân Viên.
     public void Display() {
@@ -98,9 +62,8 @@ public class ManagerEmployee {
             System.out.println("_________________________________");
             System.out.println("1. Show Employee Full Time: ");
             System.out.println("2. Show Employee Part Time: ");
-            System.out.println("3. Show Product: ");
-            System.out.println("4. Show All : ");
-            System.out.println("5. Exit.");
+            System.out.println("3. Show All : ");
+            System.out.println("4. Exit.");
             String choice = sc.nextLine();
             switch (choice) {
                 case "1":
@@ -110,12 +73,9 @@ public class ManagerEmployee {
                     showEmployeePartTime();
                     break;
                 case "3":
-                    showProduct();
-                    break;
-                case "4":
                     showAll();
                     break;
-                case "5":
+                case "4":
                     return;
                 default:
                     System.out.println("Not found choice! ");
@@ -163,56 +123,28 @@ public class ManagerEmployee {
 
     }
 
-    public Product creatproduct() { //Tạo đối tượng sản phẩm.
-        System.out.println("Add Product: ");
-        System.out.println("________________");
-        System.out.println("Enter Name Product: ");
-        String name = sc.nextLine();
-        System.out.println("Enter Trademark: ");
-        String trademark = sc.nextLine();
-        System.out.println("Enter Material: ");
-        String material = sc.nextLine();
-        System.out.println("Enter Price: ");
-        double price = Double.parseDouble(sc.nextLine());
-        System.out.println("Enter Size: ");
-        String size = sc.nextLine();
-        System.out.println("Enter Quantity: ");
-        int quantity = Integer.parseInt(sc.nextLine());
-        Product.count--;
-        Product.num--;
-        return new Product(name, trademark, material, price, size, quantity);
-    }
-
-    public Product creatProduct() {
-        Product product = creatproduct();
-        return new Product(product.getNameProduct(), product.getTrademark(),
-                product.getMaterial(), product.getPrice(), product.getSize(), product.getQuantity());
-    }
 
     public void AddEmployee() {
         while (true) {
+            readDataFromFile();
             System.out.println("Add Employee: ");
             System.out.println("_________________");
             System.out.println("1. Add Employee Full Time: ");
             System.out.println("2. Add Employee Part Time: ");
-            System.out.println("3. Add Product: ");
-            System.out.println("4. Exit.");
+            System.out.println("3. Exit.");
             System.out.println("Enter Choice");
             String choice = sc.nextLine();
             switch (choice) {
                 case "1":
                     employees.add(creatEmployeeFullTime());
                     writeDataToFile(employees);
+
                     break;
                 case "2":
                     employees.add(creatEmployeePartTime());
                     writeDataToFile(employees);
                     break;
                 case "3":
-                    products.add(creatProduct());
-                    writeDataToFile1(products);
-                    break;
-                case "4":
                     return;
                 default:
                     System.out.println("Not found choice!");
