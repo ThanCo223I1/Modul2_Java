@@ -49,4 +49,7 @@ public class EmployeeFullTime extends Admin {
     public void setDayOff(int dayOff) {
         this.dayOff = dayOff;
     }
+    public double Salary(){
+        return  SALARY * (getWorkDay() - getDayOff());
+    }
 }

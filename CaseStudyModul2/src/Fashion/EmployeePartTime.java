@@ -39,4 +39,7 @@ public class EmployeePartTime extends Admin {
     public void setWorkTime(int workTime) {
         this.workTime = workTime;
     }
+    public double Salary(){
+        return SALARY * getWorkTime();
+    }
 }

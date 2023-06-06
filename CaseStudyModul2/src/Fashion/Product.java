@@ -13,6 +13,7 @@ public class Product implements Serializable {
     private double price;
     private String size;
     private int quantity;
+    private int quantityOrder;
 
     public Product(String nameProduct, String trademark, String material, double price, String size, int quantity) {
         this.id = count++;
@@ -23,6 +24,23 @@ public class Product implements Serializable {
         this.price = price;
         this.size = size;
         this.quantity = quantity;
+    }
+    public Product(String nameProduct, String trademark, String material, double price, String size, int quantity,int quantityOrder) {
+        this.nameProduct = nameProduct;
+        this.trademark = trademark;
+        this.material = material;
+        this.price = price;
+        this.size = size;
+        this.quantity = quantity;
+        this.quantityOrder = quantityOrder;
+    }
+
+    public int getQuantityOrder() {
+        return quantityOrder;
+    }
+
+    public void setQuantityOrder(int quantityOrder) {
+        this.quantityOrder = quantityOrder;
     }
 
     public int getNumber() {
@@ -96,4 +114,6 @@ public class Product implements Serializable {
     public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
+
+
 }
