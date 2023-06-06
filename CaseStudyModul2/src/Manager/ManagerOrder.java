@@ -1,7 +1,6 @@
 package Manager;
 
-import Fashion.Order;
-import Fashion.Product;
+import Fashion.*;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -46,20 +45,21 @@ public class ManagerOrder extends ManagerProduct {
         return products1;
     }
 
+
     public void purchaseProduct() { // mua sản phẩm.
-        Product product  = null;
+        Product product = null;
         int quantity = 0;
-        int count=0;
+        int count = 0;
         while (true) {
             System.out.println("Menu");
             System.out.println("1. Choose To Buy Products");
-            System.out.println("2. Payment orders");
+            System.out.println("2. purchaseProduct");
             System.out.println("3. Exit.");
             System.out.println("Enter Choice!");
             String choice = scanner.nextLine();
             switch (choice) {
                 case "1":
-                    List<Product> products1 = readDataFromFile();
+                 //   List<Product> products1 = readDataFromFile();
                     System.out.println("Enter Product Name: ");
                     String productName = scanner.nextLine();
                     for (Product product1 : products) {
@@ -73,34 +73,34 @@ public class ManagerOrder extends ManagerProduct {
                                     product1.getMaterial(), product1.getPrice(), product1.getSize(), product1.getQuantity(), quantity);
                             orders.add(product);
                             System.out.printf("%-20s%-20s%-20s%-20s%-20s%-20s%s", "Product: ", "STT", "NameProduct", "Price", "Size", "Quantity", "Total Product \n");
-                            for (Product order1: orders ) {
+                            for (Product order1 : orders) {
                                 System.out.printf("%-20s%-20s%-20s%-20s%-20s%-20s%-20s%s", "", ++count, order1.getNameProduct(), order1.getPrice(), order1.getSize(),
-                                        order1.getQuantityOrder(), order1.getQuantityOrder()*order1.getPrice(), "\n");
+                                        order1.getQuantityOrder(), order1.getQuantityOrder() * order1.getPrice(), "\n");
                             }
-                            count=0;
+                            count = 0;
                             break;
                         }
                     }
-                    writeDataToFile(products1);
+//                    writeDataToFile(products1);
                     break;
                 case "2":
-                    List<Product> products11 =readDataFromFile();
+                    List<Product> products11 = readDataFromFile();
                     double totalPrice = 0;
                     for (Product order : orders) {
                         if (order.getQuantity() >= quantity) {
-                           totalPrice = totalPrice + (order.getPrice() * order.getQuantityOrder());
+                            totalPrice = totalPrice + (order.getPrice() * order.getQuantityOrder());
 
                         }
                     }
-                    System.out.println("\t\t\t\t"+" ------------------------------------ TOTAL BILLS PAYMENT -------------------------------------");
-                    System.out.printf("%-20s%-20s%-20s%-20s%-20s%-20s%-20s%s", "Product: ", "STT", "NameProduct", "Price", "Size", "Quantity", "Total Product"," \n");
-                    for (Product order1: orders ) {
+                    System.out.println("\t\t\t\t" + " ------------------------------------ TOTAL BILLS PAYMENT -------------------------------------");
+                    System.out.printf("%-20s%-20s%-20s%-20s%-20s%-20s%-20s%s", "Product: ", "STT", "NameProduct", "Price", "Size", "Quantity", "Total Product", " \n");
+                    for (Product order1 : orders) {
                         System.out.printf("%-20s%-20s%-20s%-20s%-20s%-20s%-20s%s", "", ++count, order1.getNameProduct(),
-                                order1.getPrice(), order1.getSize(), order1.getQuantityOrder(), order1.getQuantityOrder()*order1.getPrice(), "\n");
+                                order1.getPrice(), order1.getSize(), order1.getQuantityOrder(), order1.getQuantityOrder() * order1.getPrice(), "\n");
 
                     }
-                    count=0;
-                    System.out.printf("%-20s%-20s%-20s%-20s%-20s%-20s%-20s%s","Total Order:","","","","","", totalPrice ,"\n");
+                    count = 0;
+                    System.out.printf("%-20s%-20s%-20s%-20s%-20s%-20s%-20s%s", "Total Order:", "", "", "", "", "", totalPrice, "\n");
                     writeDataToFile(products11);
                     break;
                 case "3":
@@ -109,5 +109,6 @@ public class ManagerOrder extends ManagerProduct {
                     System.out.println("Not Found Choice!");
             }
         }
+
     }
 }

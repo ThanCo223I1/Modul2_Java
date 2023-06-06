@@ -13,6 +13,10 @@ public class Order {
         this.customer = customer;
     }
 
+    public Order() {
+
+    }
+
     public List<Product> getProducts() {
         return products;
     }
@@ -35,6 +39,22 @@ public class Order {
 
     public void setCustomer(Customer customer) {
         this.customer = customer;
+    }
+
+    public void addProduct(Product product) {
+        products.add(product);
+    }
+
+    public double getTotalMoney() {
+        int count = 1;
+        System.out.printf("%-20s%-20s%-20s%-20s%-20s%-20s%s", "Product: ", "STT", "NameProduct", "Price", "Size", "Quantity", "Total Product \n");
+        double totalMoney = 0;
+        for (Product product : products) {
+            totalMoney += product.getTotalPrice();
+            System.out.printf("%-20s%-20s%-20s%-20s%-20s%-20s%-20s%s", "", ++count, product.getNameProduct(), product.getPrice(), product.getSize(),
+                    product.getQuantityOrder(), product.getQuantityOrder() * product.getPrice(), "\n");
+        }
+        return totalMoney;
     }
 
     @Override

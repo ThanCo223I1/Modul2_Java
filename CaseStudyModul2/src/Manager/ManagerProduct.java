@@ -39,17 +39,20 @@ public class ManagerProduct {
         } catch (Exception ex) {
             ex.printStackTrace();
         }
+        products = products1;
         return products1;
     }
 
     //1. Hiển thị danh sách sản phẩm
     public void DisplayProduct() {
+        List<Product> products1 = readDataFromFile();
         System.out.printf("%-15s%-15s%-15s%-15s%-15s%-15s%-15s%-15s%s", "Product: ", "Number", "ID", "Name", "Age", "Phone", "Address", "Email", "WorkTime \n");
-        for (Product product : products) {
+        for (Product product : products1) {
             if (product instanceof Product) {
                 System.out.printf("%-15s%-15s%-15s%-15s%-15s%-15s%-15s%-15s%s", "", ((Product) product).getNumber(), product.getId(), product.getNameProduct(), product.getTrademark(), product.getMaterial(), product.getPrice(), product.getSize(), ((Product) product).getQuantity() + "\n");
             }
         }
+
     }
 
     //2. Thêm sản phẩm
@@ -120,7 +123,7 @@ public class ManagerProduct {
             String choice = scanner.nextLine();
             switch (choice) {
                 case "1":
-                    products.add(creatProduct());
+                    products1.add(creatProduct());
                     writeDataToFile(products1);
                     break;
                 case "2":

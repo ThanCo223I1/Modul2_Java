@@ -114,6 +114,9 @@ public class Product implements Serializable {
     public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
+    public double getTotalPrice() {
+        return price * quantity;
+    }
 
 
 }
