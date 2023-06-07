@@ -59,7 +59,7 @@ public class ManagerOrder extends ManagerProduct {
             String choice = scanner.nextLine();
             switch (choice) {
                 case "1":
-                 //   List<Product> products1 = readDataFromFile();
+                    List<Product> products1 = readDataFromFile();
                     System.out.println("Enter Product Name: ");
                     String productName = scanner.nextLine();
                     for (Product product1 : products) {
@@ -81,7 +81,7 @@ public class ManagerOrder extends ManagerProduct {
                             break;
                         }
                     }
-//                    writeDataToFile(products1);
+                    writeDataToFile(products1);
                     break;
                 case "2":
                     List<Product> products11 = readDataFromFile();

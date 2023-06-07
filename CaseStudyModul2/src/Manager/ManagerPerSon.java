@@ -117,8 +117,17 @@ public class ManagerPerSon {
                 break;
             } else System.out.println("Not validate!");
         }
+       double salary;
+        while (true) {
+            System.out.println("Enter Salary: ");
+            double inputSalary = Double.parseDouble(scanner.nextLine());
+            if (validate.isValidateInputString(String.valueOf(inputSalary), Validate.Salary_PETTERN)) {
+                salary = inputSalary;
+                break;
+            } else System.out.println("Not validate!");
+        }
         return new EmployeeFullTime(person.getName(), person.getGender(),
-                person.getBirthday(), person.getPhone(), person.getEmail(), workDay, dayOff);
+                person.getBirthday(), person.getPhone(), person.getEmail(), workDay, dayOff,salary);
     }
 
     // Tạo đối tượng thêm thuộc tính cho nhân viên parttime.
@@ -133,8 +142,17 @@ public class ManagerPerSon {
                 break;
             } else System.out.println("Not validate!");
         }
+        double salary;
+        while (true) {
+            System.out.println("Enter Salary: ");
+            double inputSalary = Double.parseDouble(scanner.nextLine());
+            if (validate.isValidateInputString(String.valueOf(inputSalary), Validate.Salary_PETTERN)) {
+                salary = inputSalary;
+                break;
+            } else System.out.println("Not validate!");
+        }
         return new EmployeePartTime(person.getName(), person.getGender(),
-                person.getBirthday(), person.getPhone(), person.getEmail(), timeWork);
+                person.getBirthday(), person.getPhone(), person.getEmail(), timeWork,salary);
     }
 
     //1. Thêm nhân viên Full Time và PartTime.
@@ -403,7 +421,7 @@ public class ManagerPerSon {
     public void Salary() {
         List<Person> personList1 = readDataFromFile();
         while (true) {
-            System.out.println("Salary Employee");
+            System.out.println("------Salary Employee------");
             System.out.println("___________________________");
             System.out.println("1. SalaryEmployeeFullTime: ");
             System.out.println("2. SalaryEmployeePartTime: ");

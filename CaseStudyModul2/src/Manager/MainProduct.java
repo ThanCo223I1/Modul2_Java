@@ -2,27 +2,28 @@ package Manager;
 
 import java.util.Scanner;
 
-public class Main {
-    public static void main(String[] args) {
+public class MainProduct {
+   public void ProductMain(){
         ManagerPerSon managerPerSon = new ManagerPerSon();
         ManagerProduct managerProduct = new ManagerProduct();
         ManagerOrder managerOrder = new ManagerOrder();
         Scanner scanner = new Scanner(System.in);
         while (true) {
-            System.out.println("----------------- Fashion F'Mens -------------------");
-            System.out.println("1. Display List Product.");
-            System.out.println("2. Add Product.");
-            System.out.println("3. Display List Person.");
-            System.out.println("4. Add Person.");
-            System.out.println("5. Check In Person.");
-            System.out.println("6. Edit Product.");
-            System.out.println("7. Edit Person.");
-            System.out.println("8. Delete Product.");
-            System.out.println("9. Delete Person.");
-            System.out.println("10. Order.");
-            System.out.println("11. Salary Person.");
-            System.out.println("12. Exit.");
-            System.out.println("Enter Choice.");
+            System.out.println(" |_-_-_-_-_-_-_-_- Fashion F'Mens -_-_-_-_-_-_-_-_-_|");
+            System.out.println("|               1. Display List Product.           |");
+            System.out.println(" |              2. Add Product.                     |");
+            System.out.println("|               3. Display List Person.            |");
+            System.out.println(" |              4. Add Person.                      |");
+            System.out.println("|               5. Check In Person.                |");
+            System.out.println(" |              6. Edit Product.                    |");
+            System.out.println("|               7. Edit Person.                    |");
+            System.out.println(" |              8. Delete Product.                  |");
+            System.out.println("|               9. Delete Person.                  |");
+            System.out.println(" |              10. Order.                          |");
+            System.out.println("|               11. Salary Person.                 |");
+            System.out.println(" |              12. LogOut.                         |");
+            System.out.println("|__________________________________________________|");
+            System.out.println("Enter Choice: ");
             String choice = scanner.nextLine();
             switch (choice) {
                 case "1":
@@ -58,7 +59,7 @@ public class Main {
                     managerPerSon.Salary();
                     break;
                 case "12":
-                    System.exit(12);
+                   return;
                 default:
                     System.out.println("Not Found Choice!");
             }
