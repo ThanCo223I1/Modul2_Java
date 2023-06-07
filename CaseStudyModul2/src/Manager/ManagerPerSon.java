@@ -282,6 +282,7 @@ public class ManagerPerSon {
         } else {
             System.out.println("Employee with ID //Nhan vien co ID: " + employeeId + " not found//Khong Tim Thay.");
         }
+        System.out.println("d");
     }
 
     public void checkInEmployeePartTime() {
