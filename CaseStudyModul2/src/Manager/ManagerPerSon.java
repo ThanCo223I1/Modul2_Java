@@ -117,17 +117,17 @@ public class ManagerPerSon {
                 break;
             } else System.out.println("Not validate!");
         }
-       double salary;
-        while (true) {
-            System.out.println("Enter Salary: ");
-            double inputSalary = Double.parseDouble(scanner.nextLine());
-            if (validate.isValidateInputString(String.valueOf(inputSalary), Validate.Salary_PETTERN)) {
-                salary = inputSalary;
-                break;
-            } else System.out.println("Not validate!");
-        }
+//       double salary;
+//        while (true) {
+//            System.out.println("Enter Salary: ");
+//            double inputSalary = Double.parseDouble(scanner.nextLine());
+//            if (validate.isValidateInputString(String.valueOf(inputSalary), Validate.Salary_PETTERN)) {
+//                salary = inputSalary;
+//                break;
+//            } else System.out.println("Not validate!");
+//        }
         return new EmployeeFullTime(person.getName(), person.getGender(),
-                person.getBirthday(), person.getPhone(), person.getEmail(), workDay, dayOff,salary);
+                person.getBirthday(), person.getPhone(), person.getEmail(), workDay, dayOff);
     }
 
     // Tạo đối tượng thêm thuộc tính cho nhân viên parttime.
@@ -142,17 +142,17 @@ public class ManagerPerSon {
                 break;
             } else System.out.println("Not validate!");
         }
-        double salary;
-        while (true) {
-            System.out.println("Enter Salary: ");
-            double inputSalary = Double.parseDouble(scanner.nextLine());
-            if (validate.isValidateInputString(String.valueOf(inputSalary), Validate.Salary_PETTERN)) {
-                salary = inputSalary;
-                break;
-            } else System.out.println("Not validate!");
-        }
+//        double salary;
+//        while (true) {
+//            System.out.println("Enter Salary: ");
+//            double inputSalary = Double.parseDouble(scanner.nextLine());
+//            if (validate.isValidateInputString(String.valueOf(inputSalary), Validate.Salary_PETTERN)) {
+//                salary = inputSalary;
+//                break;
+//            } else System.out.println("Not validate!");
+//        }
         return new EmployeePartTime(person.getName(), person.getGender(),
-                person.getBirthday(), person.getPhone(), person.getEmail(), timeWork,salary);
+                person.getBirthday(), person.getPhone(), person.getEmail(), timeWork);
     }
 
     //1. Thêm nhân viên Full Time và PartTime.
@@ -189,21 +189,21 @@ public class ManagerPerSon {
 
     private void showEmployeeFullTime() {
         List<Person> personList1 = readDataFromFile();
-        System.out.printf("%-15s%-15s%-15s%-15s%-15s%-15s%-15s%-15s%-15s%s", "Full Time: ", "Number", "ID", "Name", "Gender", "BirthDay", "Phone", "Email", "WorkDay", "Day Off \n");
+        System.out.printf("%-10s%-10s%-8s%-10s%-10s%-15s%-15s%-20s%-15s%s", "Full Time: ", "Number", "ID", "Name", "Gender", "BirthDay", "Phone", "Email", "WorkDay", "Day Off \n");
         for (Person person : personList1) {
             if (person instanceof EmployeeFullTime) {
-                System.out.printf("%-15s%-15s%-15s%-15s%-15s%-15s%-15s%-15s%-15s%s", "", ((EmployeeFullTime) person).getNumber(),
-                        person.getId(), person.getName(), person.getGender(),person.getBirthday(), person.getPhone(), person.getEmail(), ((EmployeeFullTime) person).getWorkDay(), ((EmployeeFullTime) person).getDayOff() + "\n");
+                System.out.printf("%-11s%-10s%-8s%-10s%-10s%-15s%-15s%-20s%-15s%s", " ", ((EmployeeFullTime) person).getNumber(),
+                        person.getId(), person.getName(), person.getGender(), person.getBirthday(), person.getPhone(), person.getEmail(), ((EmployeeFullTime) person).getWorkDay(), ((EmployeeFullTime) person).getDayOff() + "\n");
             }
         }
     }
 
     private void showEmployeePartTime() {
         List<Person> personList1 = readDataFromFile();
-        System.out.printf("%-15s%-15s%-15s%-15s%-15s%-15s%-15s%-15s%s", "Part Time: ", "Number", "ID", "Name", "Gender", "BirthDay", "Phone", "Email", "WorkTime \n");
+        System.out.printf("%-10s%-10s%-8s%-10s%-10s%-15s%-15s%-20s%s", "Part Time: ", "Number", "ID", "Name", "Gender", "BirthDay", "Phone", "Email", "WorkTime \n");
         for (Person person : personList1) {
             if (person instanceof EmployeePartTime) {
-                System.out.printf("%-15s%-15s%-15s%-15s%-15s%-15s%-15s%-15s%s", "", ((EmployeePartTime) person).getNumber(),
+                System.out.printf("%-11s%-10s%-8s%-10s%-10s%-15s%-15s%-20s%s", "", ((EmployeePartTime) person).getNumber(),
                         person.getId(), person.getName(), person.getGender(), person.getBirthday(), person.getPhone(), person.getEmail(), ((EmployeePartTime) person).getWorkTime() + "\n");
             }
         }
@@ -237,7 +237,6 @@ public class ManagerPerSon {
 
     //3. Điểm danh nhân viên FullTime Và PartTime
     public void CheckInEmployee() {
-        List<Person> personList1 = readDataFromFile();
         while (true) {
             System.out.println("--------Check In Employee---------");
             System.out.println("1. Check In Employee Full Time: ");
@@ -248,11 +247,10 @@ public class ManagerPerSon {
             switch (choice) {
                 case "1":
                     checkInEmployeeFullTime();
-                    writeDataToFile(personList1);
                     break;
                 case "2":
                     checkInEmployeePartTime();
-                    writeDataToFile(personList1);
+
                     break;
                 case "3":
                     return;
@@ -263,34 +261,38 @@ public class ManagerPerSon {
     }
 
     public void checkInEmployeeFullTime() {
+        List<Person> personList1 = readDataFromFile();
         boolean check = false;
         int workDay;
         System.out.println("Enter Id Check In Full Time: ");
         int employeeId = Integer.parseInt(scanner.nextLine());
-        for (Person person : personList) {
+        for (Person person : personList1) {
             if (person instanceof EmployeeFullTime) {
                 if (person.getId() == employeeId) {
                     check = true;
                     workDay = ((EmployeeFullTime) person).getWorkDay();
                     ((EmployeeFullTime) person).setWorkDay(++workDay);
                 }
+                writeDataToFile(personList1);
             }
         }
         if (check) {
             System.out.println("Attendance marked for Employee with ID: " + employeeId);
             // cham cong duoc danh dau cho nhan vien cos id la:
+
         } else {
             System.out.println("Employee with ID //Nhan vien co ID: " + employeeId + " not found//Khong Tim Thay.");
         }
-        System.out.println("d");
+
     }
 
     public void checkInEmployeePartTime() {
+        List<Person> personList1 = readDataFromFile();
         boolean check = false;
         int workTime;
         System.out.println("Enter Id Check In Part Time: ");
         int employeeId = Integer.parseInt(scanner.nextLine());
-        for (Person person : personList) {
+        for (Person person : personList1) {
             if (person instanceof EmployeePartTime) {
                 if (person.getId() == employeeId) {
                     check = true;
@@ -305,15 +307,18 @@ public class ManagerPerSon {
         } else {
             System.out.println("Employee with ID //Nhan vien co ID: " + employeeId + " not found//Khong Tim Thay.");
         }
+        writeDataToFile(personList1);
     }
 
     //4. Sửa Nhân viên FullTime Và PartTime Theo ID.
     public int findIndexById(int id) {
-        if (!personList.isEmpty()) {
-            for (int i = 0; i < personList.size(); i++) {
-                if (personList.get(i).getId() == id) return i;
+        List<Person> personList1 = readDataFromFile();
+        if (!personList1.isEmpty()) {
+            for (int i = 0; i < personList1.size(); i++) {
+                if (personList1.get(i).getId() == id) return i;
             }
         }
+        writeDataToFile(personList1);
         return -1;
     }
 
@@ -362,7 +367,7 @@ public class ManagerPerSon {
 
     public void editEmployeePartTime() {
         List<Person> personList1 = readDataFromFile();
-        if (personList.isEmpty()) {
+        if (personList1.isEmpty()) {
             System.out.println("EmployeePartTime is Empty!");
         } else {
             System.out.print("Enter ID Part Time: ");
@@ -370,8 +375,8 @@ public class ManagerPerSon {
             EmployeePartTime employeePartTime = (EmployeePartTime) creatEmployeePartTime();
             int checkID = findIndexById(idPartTime);
             if (checkID != -1) {
-                employeePartTime.setId(personList.get(checkID).getId());
-                personList.set(checkID, employeePartTime);
+                employeePartTime.setId(personList1.get(checkID).getId());
+                personList1.set(checkID, employeePartTime);
             } else System.out.println("Not found ID!");
         }
         writeDataToFile(personList1);
@@ -379,14 +384,14 @@ public class ManagerPerSon {
 
     public void DeleteProductByID() {
         List<Person> personList1 = readDataFromFile();
-        if (personList.isEmpty()) {
+        if (personList1.isEmpty()) {
             System.out.println("Employee is Empty!");
         } else {
             System.out.print("Enter ID : ");
             int idFullTime = Integer.parseInt(scanner.nextLine());
             int checkID = findIndexById(idFullTime);
             if (checkID != -1) {
-                personList.remove(checkID);
+                personList1.remove(checkID);
             } else System.out.println("Not found ID!");
         }
         writeDataToFile(personList1);
@@ -394,22 +399,26 @@ public class ManagerPerSon {
 
     //Tính lương nhân viên.
     public double salaryEmployeeFullTime() {
+        List<Person> personList1 = readDataFromFile();
         double salaryFullTime = 0;
-        for (Person person : personList) {
+        for (Person person : personList1) {
             if (person instanceof EmployeeFullTime)
                 salaryFullTime += ((EmployeeFullTime) person).Salary();
         }
         System.out.println("Salary Employee Full Time: " + salaryFullTime);
+        writeDataToFile(personList1);
         return salaryFullTime;
     }
 
     public double salaryEmployeePartTime() {
+        List<Person> personList1 = readDataFromFile();
         double salaryPartTime = 0;
-        for (Person person : personList) {
+        for (Person person : personList1) {
             if (person instanceof EmployeePartTime)
                 salaryPartTime += ((EmployeePartTime) person).Salary();
         }
         System.out.println("Salary Employee Part Time: " + salaryPartTime);
+        writeDataToFile(personList1);
         return salaryPartTime;
     }
 

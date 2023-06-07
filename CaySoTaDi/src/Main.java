@@ -35,12 +35,14 @@ public class Main {
                 case "5":
                     break;
                 case "6":
+
+                case "7":
                     managerEmployee.checkInEmployee();
                     break;
-                case "7":
+                case "8":
                     managerEmployee.Salary();
                     break;
-                case "8":
+                case "9":
                     System.exit(7);
                 default:
                     System.out.println("Not Found Choice!");

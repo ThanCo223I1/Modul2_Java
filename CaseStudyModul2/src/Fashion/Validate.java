@@ -9,7 +9,6 @@ public class Validate {
     public static final String UserName_PATTERN = "^[A-Z][a-z]+\\d*$";//VoThan96
     public static final String PassWord_PATTERN = "^[A-Z][a-z]+\\d*$";//VoThan96
     public static final String ROLE_PATTERN = "^(ADMIN|USER)$";
-    public static final String Salary_PETTERN = "^\\d+$";
     public static final String Name_PATTERN = "^[A-Z][a-z]+$"; //VoVuThan
     public static final String Gender_PATTERN = "^(Male|Female)$"; //Male/Female
     public static final String BirthDay_PETTERN = "^(0?[1-9]|[12][0-9]|3[01])/(0?[1-9]|1[012])/\\d{4}$";//(dd/MM/yyyy)

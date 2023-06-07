@@ -1,21 +1,17 @@
 package Fashion;
 
 public class EmployeePartTime extends Admin {
-    private  double SALARY = 3;
+    private static final double SALARY = 3;
     private int number;
     private static int count;
     private int workTime;
 
 
-    public EmployeePartTime(String name, String gender, String birthday, String phone, String email, int workTime,double salary) {
+    public EmployeePartTime(String name, String gender, String birthday, String phone, String email, int workTime) {
         super(name, gender, birthday, phone, email);
         this.number = count++;
         this.workTime = workTime;
-        this.SALARY = salary;
-    }
 
-    public double getSALARY() {
-        return SALARY;
     }
 
     public int getNumber() {
